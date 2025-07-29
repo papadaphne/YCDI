@@ -243,3 +243,96 @@ section h2 {
         flex-direction: column;
     }
 }
+/* Styling for New Curhat Form */
+.curhat-form-section {
+    background-color: var(--white-color);
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.curhat-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.curhat-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.curhat-form label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.curhat-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.curhat-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.curhat-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Thank You Message Styling */
+.thank-you-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.thank-you-message h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.thank-you-message p {
+    font-size: 1.1rem;
+}
+
+.thank-you-message a {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* QRIS Option Section */
+.qris-option {
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.qris-option h2 {
+    margin-bottom: 1rem;
+}
+
+.qris-option p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.qris-container-small img {
+    border-radius: 8px;
+}

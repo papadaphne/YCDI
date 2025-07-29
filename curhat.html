@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Curhat Anonim - YCDI</title>
+    <meta name="description" content="Tuliskan ceritamu di sini. Ruang aman untuk melepaskan beban hatimu tanpa nama, tanpa jejak. Kami mendengarkan.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">YCDI</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="curhat.html" class="active">Curhat Sekarang</a></li>
+                    <li><a href="galeri.html">Galeri Respon</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Tuliskan Apa Pun yang Kamu Rasa</h1>
+                <p>Tempat ini aman. Identitasmu tidak akan pernah kami ketahui. Lepaskanlah.</p>
+            </div>
+        </section>
+
+        <section class="curhat-form-section">
+            <div class="container">
+                <form id="curhatForm" class="curhat-form">
+                    <div class="form-group">
+                        <label for="story">Ceritamu...</label>
+                        <textarea id="story" name="story" rows="12" placeholder="Ketikkan isi hatimu di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Kirim Curhatanmu</button>
+                </form>
+                <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+                    <h3>Terima kasih telah berbagi.</h3>
+                    <p>Ceritamu telah kami terima. Kami akan membacanya dengan saksama. Kamu tidak sendirian. Jika ada respon kreatif, kami akan membagikannya di <a href="galeri.html">Galeri Respon</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="qris-option">
+            <div class="container">
+                <h2>Opsi Lain: Curhat via QRIS</h2>
+                <p>Kamu juga bisa mengirim curhat melalui kolom 'Pesan' saat melakukan donasi sukarela via QRIS. Pindai kode di bawah ini.</p>
+                <div class="qris-container-small">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/donasi-ycdi" alt="Kode QRIS Donasi dan Curhat YCDI">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yayasan Curhat Digital Indonesia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('curhatForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form untuk submit secara normal
+            
+            // Sembunyikan form
+            this.style.display = 'none';
+            
+            // Tampilkan pesan terima kasih
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
