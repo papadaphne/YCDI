@@ -1,13 +1,14 @@
 /* General Styling */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;600&display=swap');
 
 :root {
-    --primary-color: #0056b3;
-    --secondary-color: #007bff;
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: 'Lora', serif;
+    --primary-color: #2c3e50; /* Dark Blue-Gray */
+    --secondary-color: #3498db; /* Bright Blue */
+    --light-color: #ecf0f1; /* Light Gray */
+    --white-color: #ffffff;
     --dark-color: #333;
-    --light-color: #f4f4f4;
-    --white-color: #fff;
-    --font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -17,8 +18,8 @@
 }
 
 body {
-    font-family: var(--font-family);
-    line-height: 1.6;
+    font-family: var(--primary-font);
+    line-height: 1.7;
     color: var(--dark-color);
     background-color: var(--white-color);
 }
@@ -72,14 +73,16 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 86, 179, 0.7)), url('https://via.placeholder.com/1500x800.png?text=Youth+Learning') no-repeat center center/cover;
+    background: var(--primary-color);
     color: var(--white-color);
     text-align: center;
-    padding: 6rem 0;
+    padding: 6rem 2rem;
 }
 
 .hero h1 {
+    font-family: var(--secondary-font);
     font-size: 3rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
@@ -94,18 +97,18 @@ body {
 .cta-button {
     background-color: var(--secondary-color);
     color: var(--white-color);
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: var(--primary-color);
+    background-color: #2980b9;
 }
 
-/* General Sections */
+/* Sections */
 section {
     padding: 4rem 0;
 }
@@ -117,76 +120,21 @@ section h2 {
     color: var(--primary-color);
 }
 
-/* About Preview Section */
-.about-preview {
-    background-color: var(--light-color);
+/* Profile Section */
+.profile {
+    background-color: var(--white-color);
 }
-
-.about-preview p {
+.profile-text {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
 }
 
-/* Featured Programs & Program List */
-.program-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.program-card {
-    background: var(--white-color);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.program-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.program-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.program-card h3 {
-    font-size: 1.4rem;
-    margin: 1rem 1.5rem;
-    color: var(--dark-color);
-}
-
-.program-card p {
-    padding: 0 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.program-card a {
-    display: inline-block;
-    margin: 0 1.5rem 1.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--secondary-color);
-}
-
-/* Page Header */
-.page-header {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 3rem 0;
-    text-align: center;
-}
-.page-header h1 {
-    font-size: 2.8rem;
-}
-
 /* Vision & Mission */
+.vision-mission {
+    background-color: var(--light-color);
+}
 .vision-mission .container {
     display: flex;
     gap: 3rem;
@@ -195,69 +143,103 @@ section h2 {
 .vision-mission-item {
     flex: 1;
     max-width: 500px;
-    background: var(--light-color);
-    padding: 2rem;
-    border-radius: 8px;
+    text-align: center;
 }
-.vision-mission-item h2 {
-    text-align: left;
+.vision-mission-item h3 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
-/* Contact Form */
-.contact-form-section {
+/* Page Header */
+.page-header {
     background-color: var(--light-color);
+    padding: 3rem 0;
+    text-align: center;
 }
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
+.page-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+}
+
+/* How-to Section (curhat.html) */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.step {
+    flex: 1;
+}
+.step-number {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+.step h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.qris-container {
+    text-align: center;
     background: var(--white-color);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px dashed var(--secondary-color);
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
 }
-.form-group {
+.qris-container h2 {
     margin-bottom: 1.5rem;
 }
-.form-group label {
+.qris-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Gallery Section (galeri.html) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: var(--font-family);
-}
-.contact-form button {
-    width: 100%;
-    border: none;
-    cursor: pointer;
 }
 
 /* Footer */
 .footer {
-    background: var(--dark-color);
-    color: var(--white-color);
+    background: var(--primary-color);
+    color: var(--light-color);
     text-align: center;
     padding: 1.5rem 0;
 }
 
 /* Responsive */
 @media(max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-
-    .vision-mission .container {
+    .vision-mission .container,
+    .steps-container {
         flex-direction: column;
     }
 }
