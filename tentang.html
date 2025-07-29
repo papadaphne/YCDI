@@ -1,29 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yayasan Curhat Digital Indonesia</title>
+    <title>Tentang Kami - YCDI</title>
+    <meta name="description" content="Kenali lebih jauh tentang visi, misi, dan tujuan dari Youth Career Development Institute dalam memajukan karir pemuda Indonesia.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/logo.png" alt="Logo YCDI" class="logo">
-        <nav>
-            <a href="index.html">Beranda</a>
-            <a href="tentang.html">Tentang</a>
-            <a href="program.html">Program</a>
-            <a href="donasi.html">Donasi</a>
-        </nav>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">YCDI</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="tentang.html" class="active">Tentang Kami</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <h1>Tentang YCDI</h1>
-        <p>Ruang aman untuk menyampaikan suara hati secara anonim.</p>
-        <a href="program.html" class="btn">Pelajari Lebih Lanjut</a>
+        <section class="page-header">
+            <div class="container">
+                <h1>Tentang YCDI</h1>
+                <p>Mengenal lebih dekat siapa kami dan apa yang kami perjuangkan.</p>
+            </div>
+        </section>
+
+        <section class="vision-mission">
+            <div class="container">
+                <div class="vision-mission-item">
+                    <h2>Visi Kami</h2>
+                    <p>Menjadi lembaga pengembangan karir terdepan di Indonesia yang melahirkan talenta-talenta muda berdaya saing global dan berkarakter.</p>
+                </div>
+                <div class="vision-mission-item">
+                    <h2>Misi Kami</h2>
+                    <p>Menyediakan pendidikan dan pelatihan karir yang inovatif, relevan, dan mudah diakses. Membangun ekosistem kolaboratif antara akademisi, industri, dan pemerintah untuk mendukung kemajuan karir pemuda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <h2>Hubungi Kami</h2>
+                <p>Ada pertanyaan? Jangan ragu untuk mengirimkan pesan kepada kami.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan Anda</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Kirim Pesan</button>
+                </form>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Yayasan Curhat Digital Indonesia</p>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Youth Career Development Institute. Semua Hak Cipta Dilindungi.</p>
+        </div>
     </footer>
+
 </body>
 </html>
