@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Pengakuan Digital - YCDI</title>
+    <meta name="description" content="Lakukan donasi via QRIS untuk mendapatkan akses menulis pengakuan batinmu secara anonim.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">YCDI</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pengakuan.html" class="active">Buat Pengakuan</a></li>
+                    <li><a href="galeri.html">Galeri Respon</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="paymentStep" class="page-flow-step">
+            <div class="container">
+                <div class="step-header">
+                    <span class="step-indicator">Langkah 1 dari 2</span>
+                    <h1>Satu Langkah Menuju Ketenangan</h1>
+                    <p>Lakukan donasi sukarela melalui QRIS di bawah ini untuk membuka akses ke ruang pengakuan digital.</p>
+                </div>
+                <div class="qris-container">
+                    <h2>Pindai Kode QRIS Ini</h2>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://example.com/donasi-ycdi" alt="Kode QRIS untuk Pengakuan Digital YCDI">
+                    <p class="qris-note">Setelah membayar, klik tombol di bawah untuk melanjutkan.</p>
+                </div>
+                <button id="showFormButton" class="cta-button">Saya Sudah Membayar & Siap Menulis</button>
+            </div>
+        </section>
+
+        <section id="formStep" class="page-flow-step" style="display: none;">
+            <div class="container">
+                <div class="step-header">
+                    <span class="step-indicator">Langkah 2 dari 2</span>
+                    <h1>Ruang Pengakuanmu Telah Terbuka</h1>
+                    <p>Tempat ini aman. Tuliskan pengakuanmu tanpa nama, tanpa jejak.</p>
+                </div>
+                <form id="pengakuanForm" class="curhat-form">
+                    <div class="form-group">
+                        <label for="story">Pengakuanmu...</label>
+                        <textarea id="story" name="story" rows="12" placeholder="Ketikkan pengakuan batinmu di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Kirim Pengakuan Ini</button>
+                </form>
+                <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+                    <h3>Terima kasih, pengakuanmu telah tersimpan.</h3>
+                    <p>Kami akan membacanya dengan saksama. Kamu tidak sendirian. Jika ada respon kreatif, kami akan membagikannya di <a href="galeri.html">Galeri Respon</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yayasan Curhat Digital Indonesia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menjalankan skrip hanya setelah seluruh dokumen HTML selesai dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Ambil semua elemen yang dibutuhkan dari halaman
+            const paymentStep = document.getElementById('paymentStep');
+            const formStep = document.getElementById('formStep');
+            const showFormButton = document.getElementById('showFormButton');
+            const pengakuanForm = document.getElementById('pengakuanForm');
+            const thankYouMessage = document.getElementById('thankYouMessage');
+
+            // Pastikan semua elemen ada sebelum menambahkan event listener
+            if (showFormButton) {
+                showFormButton.addEventListener('click', function() {
+                    if (paymentStep && formStep) {
+                        paymentStep.style.display = 'none';
+                        formStep.style.display = 'block';
+                        window.scrollTo(0, 0); // Gulir ke atas halaman
+                    }
+                });
+            }
+
+            if (pengakuanForm) {
+                pengakuanForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Mencegah form submit dan refresh halaman
+                    if (thankYouMessage) {
+                        this.style.display = 'none';
+                        thankYouMessage.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
